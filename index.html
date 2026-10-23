@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <link rel="stylesheet" href="style.css">
+
+  <title>Inscripción al taller de cerámica</title>
+
+</head>
+<body>
+
+  <main class="pagina">
+    <header class="encabezado">
+      <h1>Taller de cerámica</h1>
+      <p>Reserva tu lugar en el próximo grupo. Los campos con asterisco (*) son obligatorios.</p>
+    </header>
+
+    <form class="formulario" action="#" method="post" enctype="multipart/form-data">
+
+  
+      <fieldset>
+        <legend>Tus datos</legend>
+
+        <div class="campo">
+          <label for="nombre">Nombre completo *</label>
+          <input type="text" id="nombre" name="nombre" placeholder="María Pérez" required>
+        </div>
+
+        <div class="campo">
+          <label for="correo">Correo electrónico *</label>
+          <input type="email" id="correo" name="correo" placeholder="maria@ejemplo.com" required>
+        </div>
+
+        <div class="campo">
+          <label for="telefono">Teléfono</label>
+          <input type="tel" id="telefono" name="telefono" placeholder="809-555-0123" pattern="[0-9+\- ]{7,15}">
+        </div>
+
+        <div class="campo">
+          <label for="clave">Contraseña para tu cuenta *</label>
+          <input type="password" id="clave" name="clave" minlength="8" placeholder="Mínimo 8 caracteres" required>
+        </div>
+
+        <div class="campo">
+          <label for="nacimiento">Fecha de nacimiento</label>
+          <input type="date" id="nacimiento" name="nacimiento">
+        </div>
+
+        <div class="campo">
+          <label for="sitio">Sitio web o perfil (opcional)</label>
+          <input type="url" id="sitio" name="sitio" placeholder="https://">
+        </div>
+      </fieldset>
+
+   
+      <fieldset>
+        <legend>Tu taller</legend>
+
+        <div class="campo">
+          <label for="tecnica">Técnica *</label>
+          <select id="tecnica" name="tecnica" required>
+            <option value="" selected disabled>Elige una técnica</option>
+            <optgroup label="A mano">
+              <option value="pellizco">Pellizco</option>
+              <option value="churros">Churros y rollos</option>
+              <option value="placas">Placas</option>
+            </optgroup>
+            <optgroup label="Con torno">
+              <option value="torno-inicial">Torno para principiantes</option>
+              <option value="torno-avanzado">Torno avanzado</option>
+            </optgroup>
+          </select>
+        </div>
+
+        <div class="campo">
+          <label for="pieza">Pieza que quieres hacer</label>
+          <input type="text" id="pieza" name="pieza" list="piezas" placeholder="Escribe o elige">
+          <datalist id="piezas">
+            <option value="Taza">
+            <option value="Cuenco">
+            <option value="Jarrón">
+            <option value="Plato">
+            <option value="Maceta">
+          </datalist>
+        </div>
+
+        <div class="campo">
+          <label for="mes">Mes de inicio *</label>
+          <input type="month" id="mes" name="mes" required>
+        </div>
+
+        <div class="campo">
+          <label for="hora">Hora preferida</label>
+          <input type="time" id="hora" name="hora" min="08:00" max="20:00">
+        </div>
+
+        <div class="campo">
+          <label for="personas">Número de personas</label>
+          <input type="number" id="personas" name="personas" min="1" max="6" value="1">
+        </div>
+
+        <div class="campo">
+          <label for="intensidad">Dedicación semanal (1 a 10 horas)</label>
+          <input type="range" id="intensidad" name="intensidad" min="1" max="10" value="3">
+        </div>
+
+        <div class="campo completo">
+          <fieldset class="grupo">
+            <legend>Nivel de experiencia *</legend>
+            <div class="opciones">
+              <label class="opcion">
+                <input type="radio" name="nivel" value="ninguna" required>
+                <span>Ninguna</span>
+              </label>
+              <label class="opcion">
+                <input type="radio" name="nivel" value="basica">
+                <span>Básica</span>
+              </label>
+              <label class="opcion">
+                <input type="radio" name="nivel" value="intermedia">
+                <span>Intermedia</span>
+              </label>
+              <label class="opcion">
+                <input type="radio" name="nivel" value="avanzada">
+                <span>Avanzada</span>
+              </label>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="campo completo">
+          <fieldset class="grupo">
+            <legend>Materiales que necesitas</legend>
+            <div class="opciones">
+              <label class="opcion">
+                <input type="checkbox" name="materiales" value="arcilla">
+                <span>Arcilla</span>
+              </label>
+              <label class="opcion">
+                <input type="checkbox" name="materiales" value="esmaltes">
+                <span>Esmaltes</span>
+              </label>
+              <label class="opcion">
+                <input type="checkbox" name="materiales" value="herramientas">
+                <span>Herramientas</span>
+              </label>
+              <label class="opcion">
+                <input type="checkbox" name="materiales" value="delantal">
+                <span>Delantal</span>
+              </label>
+            </div>
+          </fieldset>
+        </div>
+      </fieldset>
+
+      <!-- 3. Personalización -->
+      <fieldset>
+        <legend>Detalles</legend>
+
+        <div class="campo">
+          <label for="color">Color de esmalte favorito</label>
+          <input type="color" id="color" name="color" value="#1f3c6e">
+        </div>
+
+        <div class="campo">
+          <label for="referencia">Foto de referencia</label>
+          <input type="file" id="referencia" name="referencia" accept="image/*">
+        </div>
+
+        <div class="campo">
+          <label for="busqueda">¿Cómo nos encontraste?</label>
+          <input type="search" id="busqueda" name="busqueda" placeholder="Redes, amigos, buscador…">
+        </div>
+
+        <div class="campo">
+          <label for="avance">Progreso de tu inscripción</label>
+          <progress id="avance" max="100" value="60">60%</progress>
+        </div>
+
+        <div class="campo completo">
+          <label for="comentarios">Cuéntanos qué esperas del taller</label>
+          <textarea id="comentarios" name="comentarios" rows="4" maxlength="400" placeholder="Por ejemplo: quiero hacer un juego de tazas para regalar."></textarea>
+        </div>
+
+        <div class="campo completo">
+          <label class="opcion acuerdo">
+            <input type="checkbox" name="acepto" required>
+            <span>Acepto las condiciones del taller y el tratamiento de mis datos. *</span>
+          </label>
+        </div>
+      </fieldset>
+
+      <div class="acciones">
+        <button type="reset" class="boton secundario">Borrar todo</button>
+        <button type="submit" class="boton principal">Reservar mi lugar</button>
+      </div>
+
+    </form>
+  </main>
+
+</body>
+</html>
